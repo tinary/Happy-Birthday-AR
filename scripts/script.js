@@ -1,7 +1,3 @@
-/**
- * (c) Facebook, Inc. and its affiliates. Confidential and proprietary.
- */
-
 //==============================================================================
 // Welcome to scripting in Spark AR Studio! Helpful links:
 //
@@ -13,37 +9,15 @@
 // For projects created with v87 onwards, JavaScript is always executed in strict mode.
 //==============================================================================
 
-// How to load in modules
-const Scene = require('Scene');
-const Patches = require('Patches');
-
-
-
 // Use export keyword to make a symbol available in scripting debug console
 export const Diagnostics = require('Diagnostics');
 
-// To use variables and functions across files, use export/import keyword
-// export const animationDuration = 10;
-
-// Use import keyword to import a symbol from another file
-// import { animationDuration } from './script.js'
-
-// To access scene objects
-// const directionalLight = Scene.root.find('directionalLight0');
-
-// To access class properties
-// const directionalLightIntensity = directionalLight.intensity;
-
-// To log messages to the console
-
+// Load in modules
+const Scene = require('Scene');
+const Patches = require('Patches');
 const NativeUI = require('NativeUI');
-// const Scene = require('Scene');
 const Textures = require('Textures');
-
-
 const sceneRoot = Scene.root;
-
-// Locate the plane in the Scene
 const plane = sceneRoot.find('plane0');
 
 //==============================================================================
@@ -54,12 +28,9 @@ Promise.all([
   Textures.findFirst('pinkCake'),
   Textures.findFirst('candyCake'),
   Textures.findFirst('fruitCake'),
-  // sceneRoot.findFirst('planeTracker0'),
-  // sceneRoot.findFirst('CakeInteraction')
 ]).then(onReady);
 
 function onReady(assets) {
-
 
   Diagnostics.log('On Ready called.');
 
@@ -69,9 +40,6 @@ function onReady(assets) {
 
   const planeTracker = assets[3];
   const placer = assets[4];
-
-
-  // Diagnostics.log(texture4);
 
   // Store a reference to the picker
   const picker = NativeUI.picker;
@@ -108,19 +76,6 @@ function onReady(assets) {
   picker.selectedIndex.monitor().subscribe(function (index) {
     Patches.inputs.setScalar('selection', index.newValue);
   });
-
-
 }
-
-//==============================================================================
-// Use the picker to set the texture of the plane
-//==============================================================================
-
-// Subscribe to the selectedIndex scalar signal
-// picker.selectedIndex.monitor().subscribe(function(index) {
-//   // Update the texture of the material assigned to the plane to be the selected
-//   // texture
-//   plane.material.diffuse = configuration.items[index.newValue].image_texture;
-// });
 
 
