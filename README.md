@@ -1,6 +1,9 @@
 # Happy-Birthday-AR
 3D augmented reality experience made with Spark AR and JavaScript
 
+### Project Demo
+![BirthdayCakeAR Demo](appDemo.gif)
+
 ## Inspiration
 What’s a good way to be there for someone’s special occasion without actually being there? By sending them an AR cake customized just for them of course. Especially during this Covid-19 pandemic, we’re all so far away from some of our closest people. It would be amazing to have something that would bind us all together, and to light up the face of your loved one. A customized AR cake seemed like the perfect way to do so with the feature of adding media from your gallery making it an amazing, sweet and thoughtful way to celebrate. "I sure can’t wait to have someone send me my AR cake!"
 
